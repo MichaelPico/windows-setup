@@ -146,8 +146,9 @@ resource vm 'Microsoft.Compute/virtualMachines@2022-08-01' = {
         caching: 'ReadWrite'
         createOption: 'FromImage'
         managedDisk: {
-          storageAccountType: 'Standard_LRS'  // FIXED: Changed from Premium_LRS to Standard_LRS
+          storageAccountType: 'Standard_LRS'  
         }
+        diskSizeGB: 256
       }
     }
     networkProfile: {
