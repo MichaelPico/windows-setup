@@ -72,3 +72,25 @@ Apply Git global configuration from the repository to your machine:
 ```
 
 This will copy `.gitconfig` to `%USERPROFILE%\.gitconfig`
+
+## Azure CLI
+
+### Import Configuration (Save to Repo)
+
+Export your current Azure CLI configuration to the repository:
+
+```powershell
+.\azure-cli\import-config.ps1
+```
+
+This will export `config` and `clouds.config` from `%USERPROFILE%\.azure`
+
+### Export Configuration (Apply from Repo)
+
+Apply Azure CLI configuration from the repository to your machine:
+
+```powershell
+.\azure-cli\export-config.ps1
+```
+
+This will copy configuration files to `%USERPROFILE%\.azure`

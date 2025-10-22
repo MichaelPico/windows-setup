@@ -13,6 +13,11 @@ Write-Host "--- Git Configuration ---" -ForegroundColor Yellow
 & "$scriptDir\git\export-config.ps1"
 Write-Host ""
 
+# Export Azure CLI configuration
+Write-Host "--- Azure CLI Configuration ---" -ForegroundColor Yellow
+& "$scriptDir\azure-cli\export-config.ps1"
+Write-Host ""
+
 # Export VS Code configuration
 Write-Host "--- VS Code Configuration ---" -ForegroundColor Yellow
 & "$scriptDir\vscode\export-config.ps1"

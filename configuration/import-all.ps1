@@ -18,6 +18,11 @@ Write-Host "--- Git Configuration ---" -ForegroundColor Yellow
 & "$scriptDir\git\import-config.ps1"
 Write-Host ""
 
+# Import Azure CLI configuration
+Write-Host "--- Azure CLI Configuration ---" -ForegroundColor Yellow
+& "$scriptDir\azure-cli\import-config.ps1"
+Write-Host ""
+
 Write-Host "======================================" -ForegroundColor Cyan
 Write-Host "  All Configurations Imported!" -ForegroundColor Cyan
 Write-Host "======================================" -ForegroundColor Cyan
