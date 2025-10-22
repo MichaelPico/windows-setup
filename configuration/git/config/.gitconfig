@@ -1,0 +1,13 @@
+# This is Git's per-user configuration file.
+[user]
+	email = michael.pico.sandoval@gmail.com
+	name = Michael Pico
+[push]
+	autoSetupRemote = true
+	default = current
+[core]
+	editor = code
+[color]
+	ui = auto
+[alias]
+	quick-stats = ! /usr/local/bin/git-quick-stats
