@@ -1,0 +1,14 @@
+[cloud]
+name = AzureCloud
+
+[core]
+first_run = yes
+collect_telemetry = no
+output = table
+
+[bicep]
+use_binary_from_path = false
+
+[auto-upgrade]
+enable = yes
+
