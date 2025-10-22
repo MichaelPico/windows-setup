@@ -15,8 +15,9 @@ The Bicep templates and PowerShell scripts in this folder deploy a Windows 11 Pr
 - **VM Specifications**: Standard_B2s with Windows 11 23H2 Pro
 - **Networking**: Virtual network with dedicated subnets for VM and Azure Bastion
 - **Access**: Azure Bastion for secure RDP access without exposing public ports
-- **Auto-shutdown**: Configured to automatically shut down at 2:00 AM UTC to save costs
-- **Storage**: Standard LRS managed disks
+- **Auto-shutdown**: Configured to automatically shut down at 5:00 AM UTC to save costs
+- **Storage**: Standard LRS managed disks (256 GB)
+- **Repository Link**: Automatically creates a `windows-repo-url.txt` file on the Desktop with the repository URL, if the file is not in the Desktop it may be in the root of the C: Disk
 
 ## Quick Start
 
@@ -44,7 +45,11 @@ The Bicep templates and PowerShell scripts in this folder deploy a Windows 11 Pr
    .\deploy-bicep.ps1 -rgName "my-custom-rg" -location "eastus"
    ```
 
-The script will create the resource group and deploy all necessary resources. Once complete, you can connect to the VM via Azure Bastion through the Azure Portal.
+The script will create the resource group and deploy all necessary resources. Once complete:
+
+1. Connect to the VM via Azure Bastion through the Azure Portal
+2. Copy the windows-setup repository to the VM Desktop
+3. Run the setup scripts from the repository
 
 ## Files
 

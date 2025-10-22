@@ -52,3 +52,24 @@ Still in the **Tweaks** tab:
 1. Go through each category of tweaks
 2. Review all available preferences
 3. Customize any additional settings based on your personal requirements
+
+## Step 4: Clone Repository and Apply Configurations
+
+After installing Git in Step 1, clone the windows-setup repository:
+
+```powershell
+cd ~\Desktop
+git clone https://github.com/MichaelPico/windows-setup.git
+```
+
+Navigate to the configuration folder and run the export script to apply all saved configurations:
+
+```powershell
+cd windows-setup\configuration
+.\export-all.ps1
+```
+
+This will apply your saved configurations for:
+- VS Code (settings, keybindings, snippets, and extensions)
+- Git (global configuration)
+- Azure CLI (configuration files)

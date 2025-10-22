@@ -27,6 +27,9 @@ param adminPassword string
 @description('Sufix to be used in all the resources, default 01')
 param sufix string = '01'
 
+@description('Repository URL to write to Desktop')
+param repositoryUrl string = 'https://github.com/MichaelPico/windows-setup'
+
 var vNetHubPrefix = '10.0.0.0/16'
 var subnetBastionPrefix = '10.0.0.0/26'
 var subnetVirtualMachinePrefix = '10.0.10.0/26'
@@ -173,12 +176,27 @@ resource vmAutoShutdown 'Microsoft.DevTestLab/schedules@2018-09-15' = {
     status: 'Enabled'
     taskType: 'ComputeVmShutdownTask'
     dailyRecurrence: {
-      time: '0500' // 2:00 AM (24-hour format)
+      time: '0500' // 5:00 AM (24-hour format)
     }
     timeZoneId: 'UTC'
     notificationSettings: {
       status: 'Disabled'
     }
     targetResourceId: vm.id
+  }
+}
+
+resource vmExtension 'Microsoft.Compute/virtualMachines/extensions@2022-08-01' = {
+  name: 'SetupInstructions'
+  location: location
+  parent: vm
+  properties: {
+    publisher: 'Microsoft.Compute'
+    type: 'CustomScriptExtension'
+    typeHandlerVersion: '1.10'
+    autoUpgradeMinorVersion: true
+    settings: {
+      commandToExecute: 'powershell.exe -ExecutionPolicy Bypass -Command "\'${repositoryUrl}\' | Out-File -FilePath ([Environment]::GetFolderPath(\'Desktop\') + \'\\windows-repo-url.txt\') -Encoding UTF8"'
+    }
   }
 }
