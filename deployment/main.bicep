@@ -172,7 +172,7 @@ resource vmAutoShutdown 'Microsoft.DevTestLab/schedules@2018-09-15' = {
     status: 'Enabled'
     taskType: 'ComputeVmShutdownTask'
     dailyRecurrence: {
-      time: '0200' // 2:00 AM (24-hour format)
+      time: '0500' // 2:00 AM (24-hour format)
     }
     timeZoneId: 'UTC'
     notificationSettings: {
