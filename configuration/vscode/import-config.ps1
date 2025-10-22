@@ -3,10 +3,16 @@
 
 # Get the directory where this script is located
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+$configDir = Join-Path $scriptDir "config"
+
+# Create config directory if it doesn't exist
+if (-not (Test-Path $configDir)) {
+    New-Item -ItemType Directory -Path $configDir -Force | Out-Null
+}
 
 # Export installed extensions
 Write-Host "Exporting VS Code extensions..."
-code --list-extensions | Out-File -FilePath "$scriptDir\extensions.txt" -Encoding utf8
+code --list-extensions | Out-File -FilePath "$configDir\extensions.txt" -Encoding utf8
 Write-Host "Extensions exported to extensions.txt"
 
 # Define source and destination paths
@@ -20,7 +26,7 @@ $configFiles = @(
 Write-Host "`nCopying configuration files..."
 foreach ($file in $configFiles) {
     $sourcePath = Join-Path $vscodeUserDir $file
-    $destPath = Join-Path $scriptDir $file
+    $destPath = Join-Path $configDir $file
 
     if (Test-Path $sourcePath) {
         Copy-Item -Path $sourcePath -Destination $destPath -Force
@@ -33,7 +39,7 @@ foreach ($file in $configFiles) {
 # Copy snippets folder
 Write-Host "`nCopying snippets folder..."
 $snippetsSource = Join-Path $vscodeUserDir "snippets"
-$snippetsDest = Join-Path $scriptDir "snippets"
+$snippetsDest = Join-Path $configDir "snippets"
 
 if (Test-Path $snippetsSource) {
     # Create snippets directory if it doesn't exist
