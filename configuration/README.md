@@ -32,3 +32,25 @@ This will:
 - Copy `settings.json` and `keybindings.json` to `%APPDATA%\Code\User`
 - Copy snippets folder
 - Install all extensions from `extensions.txt`
+
+## Git
+
+### Import Configuration (Save to Repo)
+
+Export your current Git global configuration to the repository:
+
+```powershell
+.\git\import-config.ps1
+```
+
+This will export `.gitconfig` from your user profile.
+
+### Export Configuration (Apply from Repo)
+
+Apply Git global configuration from the repository to your machine:
+
+```powershell
+.\git\export-config.ps1
+```
+
+This will copy `.gitconfig` to `%USERPROFILE%\.gitconfig`
