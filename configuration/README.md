@@ -2,6 +2,24 @@
 
 This folder contains personal Windows configuration files and scripts to sync them between machines and this repository.
 
+## Quick Start
+
+### Import All Configurations (Save to Repo)
+
+Export all configurations to the repository:
+
+```powershell
+.\import-all.ps1
+```
+
+### Export All Configurations (Apply from Repo)
+
+Apply all configurations from the repository to your machine:
+
+```powershell
+.\export-all.ps1
+```
+
 ## VS Code
 
 ### Import Configuration (Save to Repo)
