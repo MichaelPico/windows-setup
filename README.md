@@ -16,6 +16,12 @@ Scripts and configurations for setting up Windows machines to my personal prefer
 
 [View Windows Setup Documentation](./windows-setup/README.md)
 
+### [Configuration](./configuration/)
+
+Personal Windows configuration files and scripts to sync configurations between machines and this repository.
+
+[View Configuration Documentation](./configuration/README.md)
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
