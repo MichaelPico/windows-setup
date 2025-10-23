@@ -62,11 +62,11 @@ cd ~\Desktop
 git clone https://github.com/MichaelPico/windows-setup.git
 ```
 
-Navigate to the configuration folder and run the export script to apply all saved configurations:
+Navigate to the configuration folder and run the apply script to apply all saved configurations:
 
 ```powershell
 cd windows-setup\configuration
-.\export-all.ps1
+.\apply-all.ps1
 ```
 
 This will apply your saved configurations for:

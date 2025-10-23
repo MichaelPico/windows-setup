@@ -1,28 +1,28 @@
-# Export All Configurations Script
+# Apply All Configurations Script
 # This script applies all configurations from the repository to the local machine
 
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 
 Write-Host "======================================" -ForegroundColor Cyan
-Write-Host "  Exporting All Configurations" -ForegroundColor Cyan
+Write-Host "  Applying All Configurations" -ForegroundColor Cyan
 Write-Host "======================================" -ForegroundColor Cyan
 Write-Host ""
 
-# Export Git configuration (first, as it might be needed for other operations)
+# Apply Git configuration (first, as it might be needed for other operations)
 Write-Host "--- Git Configuration ---" -ForegroundColor Yellow
-& "$scriptDir\git\export-config.ps1"
+& "$scriptDir\git\apply-config.ps1"
 Write-Host ""
 
-# Export Azure CLI configuration
+# Apply Azure CLI configuration
 Write-Host "--- Azure CLI Configuration ---" -ForegroundColor Yellow
-& "$scriptDir\azure-cli\export-config.ps1"
+& "$scriptDir\azure-cli\apply-config.ps1"
 Write-Host ""
 
-# Export VS Code configuration
+# Apply VS Code configuration
 Write-Host "--- VS Code Configuration ---" -ForegroundColor Yellow
-& "$scriptDir\vscode\export-config.ps1"
+& "$scriptDir\vscode\apply-config.ps1"
 Write-Host ""
 
 Write-Host "======================================" -ForegroundColor Cyan
-Write-Host "  All Configurations Exported!" -ForegroundColor Cyan
+Write-Host "  All Configurations Applied!" -ForegroundColor Cyan
 Write-Host "======================================" -ForegroundColor Cyan

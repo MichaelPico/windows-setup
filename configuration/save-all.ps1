@@ -1,28 +1,28 @@
-# Import All Configurations Script
-# This script exports all configurations to the repository
+# Save All Configurations Script
+# This script saves all configurations from the machine to the repository
 
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 
 Write-Host "======================================" -ForegroundColor Cyan
-Write-Host "  Importing All Configurations" -ForegroundColor Cyan
+Write-Host "  Saving All Configurations" -ForegroundColor Cyan
 Write-Host "======================================" -ForegroundColor Cyan
 Write-Host ""
 
-# Import VS Code configuration
+# Save VS Code configuration
 Write-Host "--- VS Code Configuration ---" -ForegroundColor Yellow
-& "$scriptDir\vscode\import-config.ps1"
+& "$scriptDir\vscode\save-config.ps1"
 Write-Host ""
 
-# Import Git configuration
+# Save Git configuration
 Write-Host "--- Git Configuration ---" -ForegroundColor Yellow
-& "$scriptDir\git\import-config.ps1"
+& "$scriptDir\git\save-config.ps1"
 Write-Host ""
 
-# Import Azure CLI configuration
+# Save Azure CLI configuration
 Write-Host "--- Azure CLI Configuration ---" -ForegroundColor Yellow
-& "$scriptDir\azure-cli\import-config.ps1"
+& "$scriptDir\azure-cli\save-config.ps1"
 Write-Host ""
 
 Write-Host "======================================" -ForegroundColor Cyan
-Write-Host "  All Configurations Imported!" -ForegroundColor Cyan
+Write-Host "  All Configurations Saved!" -ForegroundColor Cyan
 Write-Host "======================================" -ForegroundColor Cyan

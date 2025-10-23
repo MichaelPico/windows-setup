@@ -4,45 +4,45 @@ This folder contains personal Windows configuration files and scripts to sync th
 
 ## Quick Start
 
-### Import All Configurations (Save to Repo)
+### Save All Configurations (Machine → Repo)
 
-Export all configurations to the repository:
+Save all configurations from your machine to the repository:
 
 ```powershell
-.\import-all.ps1
+.\save-all.ps1
 ```
 
-### Export All Configurations (Apply from Repo)
+### Apply All Configurations (Repo → Machine)
 
 Apply all configurations from the repository to your machine:
 
 ```powershell
-.\export-all.ps1
+.\apply-all.ps1
 ```
 
 ## VS Code
 
-### Import Configuration (Save to Repo)
+### Save Configuration (Machine → Repo)
 
-Export your current VS Code configuration to the repository:
+Save your current VS Code configuration to the repository:
 
 ```powershell
-.\vscode\import-config.ps1
+.\vscode\save-config.ps1
 ```
 
-This will export:
+This will save:
 
 - Extension list to `extensions.txt`
 - `settings.json`
 - `keybindings.json`
 - `snippets/` folder
 
-### Export Configuration (Apply from Repo)
+### Apply Configuration (Repo → Machine)
 
 Apply VS Code configuration from the repository to your machine:
 
 ```powershell
-.\vscode\export-config.ps1
+.\vscode\apply-config.ps1
 ```
 
 This will:
@@ -53,44 +53,44 @@ This will:
 
 ## Git
 
-### Import Configuration (Save to Repo)
+### Save Configuration (Machine → Repo)
 
-Export your current Git global configuration to the repository:
+Save your current Git global configuration to the repository:
 
 ```powershell
-.\git\import-config.ps1
+.\git\save-config.ps1
 ```
 
-This will export `.gitconfig` from your user profile.
+This will save `.gitconfig` from your user profile.
 
-### Export Configuration (Apply from Repo)
+### Apply Configuration (Repo → Machine)
 
 Apply Git global configuration from the repository to your machine:
 
 ```powershell
-.\git\export-config.ps1
+.\git\apply-config.ps1
 ```
 
 This will copy `.gitconfig` to `%USERPROFILE%\.gitconfig`
 
 ## Azure CLI
 
-### Import Configuration (Save to Repo)
+### Save Configuration (Machine → Repo)
 
-Export your current Azure CLI configuration to the repository:
+Save your current Azure CLI configuration to the repository:
 
 ```powershell
-.\azure-cli\import-config.ps1
+.\azure-cli\save-config.ps1
 ```
 
-This will export `config` and `clouds.config` from `%USERPROFILE%\.azure`
+This will save `config` and `clouds.config` from `%USERPROFILE%\.azure`
 
-### Export Configuration (Apply from Repo)
+### Apply Configuration (Repo → Machine)
 
 Apply Azure CLI configuration from the repository to your machine:
 
 ```powershell
-.\azure-cli\export-config.ps1
+.\azure-cli\apply-config.ps1
 ```
 
 This will copy configuration files to `%USERPROFILE%\.azure`
