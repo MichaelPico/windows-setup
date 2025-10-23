@@ -28,10 +28,10 @@ The Bicep templates and PowerShell scripts in this folder deploy a Windows 11 Pr
 
 2. Create a parameters file from the sample:
    ```powershell
-   cp main.parameters.json.sample main.parameters.json
+   cp bicep\main.parameters.json.sample bicep\main.parameters.json
    ```
 
-3. Edit [main.parameters.json](./main.parameters.json) and provide:
+3. Edit [bicep/main.parameters.json](./bicep/main.parameters.json) and provide:
    - `adminUsername`: Your desired admin username
    - `adminPassword`: A secure password for the VM
 
@@ -48,11 +48,13 @@ The Bicep templates and PowerShell scripts in this folder deploy a Windows 11 Pr
 The script will create the resource group and deploy all necessary resources. Once complete:
 
 1. Connect to the VM via Azure Bastion through the Azure Portal
-2. Copy the windows-setup repository to the VM Desktop
-3. Run the setup scripts from the repository
+2. Find the `windows-repo-url.txt` file on the Desktop (or C:\ root if not on Desktop)
+3. Use the repository URL to clone the repo and run setup scripts
 
 ## Files
 
-- [main.bicep](./main.bicep) - Main Bicep template defining the infrastructure
 - [deploy-bicep.ps1](./deploy-bicep.ps1) - PowerShell script to execute the deployment
-- [main.parameters.json.sample](./main.parameters.json.sample) - Sample parameters file
+- [README.md](./README.md) - This documentation file
+- [bicep/](./bicep/) - Bicep templates and parameters
+  - [main.bicep](./bicep/main.bicep) - Main Bicep template defining the infrastructure
+  - [main.parameters.json.sample](./bicep/main.parameters.json.sample) - Sample parameters file

@@ -4,12 +4,27 @@ param(
 )
 
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
-$bicepFile = Join-Path $scriptDir "main.bicep"
-$parametersFile = Join-Path $scriptDir "main.parameters.json"
+$bicepDir = Join-Path $scriptDir "bicep"
+$bicepFile = Join-Path $bicepDir "main.bicep"
+$parametersFile = Join-Path $bicepDir "main.parameters.json"
+
+# Check if required files exist
+if (-not (Test-Path $bicepFile)) {
+    Write-Host "Error: Bicep file not found at $bicepFile" -ForegroundColor Red
+    exit 1
+}
 
 if (-not (Test-Path $parametersFile)) {
     Write-Host "Error: Parameters file not found at $parametersFile" -ForegroundColor Red
-    Write-Host "Create one from main.parameters.json.sample" -ForegroundColor Yellow
+    Write-Host "Create one from bicep\main.parameters.json.sample" -ForegroundColor Yellow
+    exit 1
+}
+
+# Check if Azure CLI is installed
+try {
+    $null = az --version
+} catch {
+    Write-Host "Error: Azure CLI is not installed or not in PATH" -ForegroundColor Red
     exit 1
 }
 
