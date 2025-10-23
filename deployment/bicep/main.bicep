@@ -196,7 +196,10 @@ resource vmExtension 'Microsoft.Compute/virtualMachines/extensions@2022-08-01' =
     typeHandlerVersion: '1.10'
     autoUpgradeMinorVersion: true
     settings: {
-      commandToExecute: 'powershell.exe -ExecutionPolicy Bypass -Command "\'${repositoryUrl}\' | Out-File -FilePath ([Environment]::GetFolderPath(\'Desktop\') + \'\\windows-repo-url.txt\') -Encoding UTF8"'
+      fileUris: [
+        '${repositoryUrl}/raw/main/deployment/set-up-vm.ps1'
+      ]
+      commandToExecute: 'powershell.exe -ExecutionPolicy Bypass -File set-up-vm.ps1 -repositoryUrl "${repositoryUrl}"'
     }
   }
 }
