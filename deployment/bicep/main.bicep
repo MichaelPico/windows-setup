@@ -199,7 +199,7 @@ resource vmExtension 'Microsoft.Compute/virtualMachines/extensions@2022-08-01' =
       fileUris: [
         '${repositoryUrl}/raw/main/deployment/set-up-vm.ps1'
       ]
-      commandToExecute: 'powershell.exe -ExecutionPolicy Bypass -File set-up-vm.ps1 -repositoryUrl "${repositoryUrl}"'
+      commandToExecute: 'powershell.exe -ExecutionPolicy Unrestricted -File set-up-vm.ps1'
     }
   }
 }
