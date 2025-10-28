@@ -1,4 +1,0 @@
-- Script to install programs with winget
-- Autohotkey script to make space + hjkl the arrows
-- Find if powertoys shortcuts can be easily implemented with commands
-- if last one is true create windows + c code, windows + f firefox 
