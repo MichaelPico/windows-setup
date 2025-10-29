@@ -2,7 +2,32 @@
 
 This folder contains scripts and configurations for setting up Windows machines to my personal preferences.
 
-## Chris Titus Tech Windows Utility
+## Step 1: Install Essential Programs
+
+Open Windows PowerShell in **Administrator mode** and run the installation script:
+
+```powershell
+.\install-essential-programs.ps1
+```
+
+This script will automatically:
+
+- Install Chocolatey (if not already installed)
+- Install all essential programs:
+  - 7-Zip
+  - AutoHotkey
+  - .NET Desktop Runtime 8
+  - .NET Desktop Runtime 9
+  - Firefox
+  - Git
+  - NuGet
+  - Postman
+  - PowerShell
+  - PowerToys
+  - Python3
+  - VS Code
+
+## Step 2: Apply Standard Tweaks with Chris Titus Tech Utility
 
 Open Windows PowerShell in **Administrator mode** and execute the following command:
 
@@ -10,48 +35,29 @@ Open Windows PowerShell in **Administrator mode** and execute the following comm
 irm "https://christitus.com/win" | iex
 ```
 
-This will launch the Chris Titus Tech Windows Utility.
+This will launch the Chris Titus Tech Windows Utility. For more information, check out the [WinUtil GitHub repository](https://github.com/ChrisTitusTech/winutil).
 
-For more information about this utility, check out the [WinUtil GitHub repository](https://github.com/ChrisTitusTech/winutil).
+Once the utility is open:
 
-## Step 1: Install Essential Programs
+1. Navigate to the **Tweaks** tab
+2. Select the **Standard** preset configuration
+3. Review the tweaks that will be applied
+4. Click **Run Tweaks** to apply the standard configuration
 
-Once the utility is open, navigate to the **Install** tab and select the desired applications, last time they were:
+## Step 3: Review and Customize Additional Preferences
 
-- 7-Zip
-- Adobe Acrobat Reader
-- AutoHotkey
-- .NET Desktop Runtime 8
-- .NET Desktop Runtime 9
-- Firefox
-- Git
-- NuGet
-- Paint.NET
-- Postman
-- PowerShell
-- PowerToys
-- Python3
-- qBittorrent
-- VLC (Video Player)
-- VS Code
-
-After selecting all programs, click **Install Selected** to begin the installation process.
-
-## Step 2: Apply Standard Tweaks
-
-Navigate to the **Tweaks** tab and:
-
-1. Select the **Standard** preset configuration
-2. Review the tweaks that will be applied
-3. Click **Run Tweaks** to apply the standard configuration
-
-## Step 3: Review and Customize Preferences
-
-Still in the **Tweaks** tab:
+Still in the Chris Titus Tech Windows Utility **Tweaks** tab:
 
 1. Go through each category of tweaks
 2. Review all available preferences
 3. Customize any additional settings based on your personal requirements
+
+You can also optionally install additional programs from the **Install** tab:
+
+- Adobe Acrobat Reader
+- Paint.NET
+- qBittorrent
+- VLC (Video Player)
 
 ## Step 4: Clone Repository and Apply Configurations
 
