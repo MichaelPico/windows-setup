@@ -11,11 +11,21 @@ $repoUrlFile = "C:\windows-repo-url.txt"
 Write-Host "Writing repository URL to C: drive root..."
 $repositoryUrl | Out-File -FilePath $repoUrlFile -Encoding UTF8
 
-# Install Git using winget
-Write-Host "Installing Git using winget..."
-winget install --id Git.Git -e --source winget --accept-package-agreements --accept-source-agreements
+# Install Chocolatey
+Write-Host "Installing Chocolatey..."
+Set-ExecutionPolicy Bypass -Scope Process -Force; `
+[System.Net.ServicePointManager]::SecurityProtocol = `
+    [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; `
+iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
-# Refresh environment variables to make git available
+# Refresh environment variables to make choco available
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+
+# Install Git using Chocolatey
+Write-Host "Installing Git using Chocolatey..."
+choco install git -y
+
+# Refresh environment variables again to make git available
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 
 # Clone the repository to C:\windows-setup
