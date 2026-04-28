@@ -27,6 +27,7 @@ $programs = @(
     'dotnet-9.0-desktopruntime',
     'firefox',
     'git',
+    'googledrive',
     'nuget.commandline',
     'oh-my-posh',
     'postman',

@@ -23,6 +23,7 @@ This script will automatically:
   - .NET Desktop Runtime 9
   - Firefox
   - Git
+  - Google Drive
   - NuGet
   - Oh My Posh
   - Postman
