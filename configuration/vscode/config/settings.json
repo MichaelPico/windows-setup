@@ -3,6 +3,9 @@
     "terminal.integrated.automationProfile.windows": {},
     "git.openRepositoryInParentFolders": "always",
     "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.fontWeight": "normal",
     "editor.minimap.enabled": false,
     "security.promptForLocalFileProtocolHandling": false,
     "playwright.reuseBrowser": true,
@@ -48,5 +51,6 @@
     "glassit.alpha": 245,
     "workbench.colorTheme": "GitHub Dark",
     "workbench.iconTheme": "material-icon-theme",
-    "claudeCode.preferredLocation": "panel"
+    "claudeCode.preferredLocation": "panel",
+    "editor.fontFamily": "Fira Code"
 }
