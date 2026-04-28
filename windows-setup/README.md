@@ -25,6 +25,7 @@ This script will automatically:
   - Git
   - Google Drive
   - NuGet
+  - Node Version Manager
   - Oh My Posh
   - Postman
   - PowerShell

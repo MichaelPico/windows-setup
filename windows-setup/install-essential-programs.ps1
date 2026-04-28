@@ -29,6 +29,7 @@ $programs = @(
     'git',
     'googledrive',
     'nuget.commandline',
+    'nvm',
     'oh-my-posh',
     'postman',
     'powershell-core',
