@@ -4,9 +4,10 @@ This folder contains scripts and configurations for setting up Windows machines 
 
 ## Step 1: Install Essential Programs
 
-Open Windows PowerShell in **Administrator mode** and run the installation script:
+Open Windows PowerShell in **Administrator mode** and run the following commands:
 
 ```powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force
 .\install-essential-programs.ps1
 ```
 
