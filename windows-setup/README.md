@@ -17,11 +17,14 @@ This script will automatically:
 - Install all essential programs:
   - 7-Zip
   - AutoHotkey
+  - Azure CLI
+  - Claude Code (community Chocolatey package)
   - .NET Desktop Runtime 8
   - .NET Desktop Runtime 9
   - Firefox
   - Git
   - NuGet
+  - Oh My Posh
   - Postman
   - PowerShell
   - PowerToys
@@ -77,6 +80,7 @@ cd windows-setup\configuration
 ```
 
 This will apply your saved configurations for:
+
 - VS Code (settings, keybindings, snippets, and extensions)
 - Git (global configuration)
 - Azure CLI (configuration files)
