@@ -112,4 +112,31 @@ foreach ($program in $toInstall) {
 
 Write-Host "All selected programs have been installed successfully!" -ForegroundColor Green
 Write-Host ""
+
+# Oh My Posh setup
+if ($toInstall -contains 'oh-my-posh') {
+    Write-Host "Configuring Oh My Posh..." -ForegroundColor Cyan
+
+    # Refresh PATH so oh-my-posh is available immediately
+    $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+
+    # Install FiraCode Nerd Font
+    Write-Host "Installing FiraCode Nerd Font..." -ForegroundColor Yellow
+    oh-my-posh font install FiraCode
+
+    # Add init line to PowerShell profile if not already present
+    $initLine = 'oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\atomic.omp.json" | Invoke-Expression'
+    if (!(Test-Path $PROFILE)) {
+        New-Item -ItemType File -Path $PROFILE -Force | Out-Null
+    }
+    if (!(Select-String -Path $PROFILE -Pattern 'oh-my-posh init' -Quiet)) {
+        Add-Content -Path $PROFILE -Value "`n$initLine"
+        Write-Host "Oh My Posh init added to profile: $PROFILE" -ForegroundColor Green
+    } else {
+        Write-Host "Oh My Posh init already present in profile, skipping." -ForegroundColor DarkGray
+    }
+
+    Write-Host ""
+}
+
 Write-Host "Note: You may need to restart your terminal or computer for all changes to take effect." -ForegroundColor Yellow
